@@ -9,7 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/styles.css">
 
-    <title>Quest go in time</title>
+    <title>{% block title %}Quest go in time{% endblock %}</title>
 </head>
 
 <body>
@@ -58,17 +58,19 @@
         </div>
     </nav>
     <div class="container">
+        {% block content %}
         <h1>Добро пожаловать в квест!</h1>
         <h2>Выбери персонажа</h2>
-        <form method="POST" action="/dialog_harry">
+        <form method="POST" action="/dialog_character">
             <button class="btn btn-primary" type="submit">Гарри</button>
         </form>
-        <form method="POST" action="/dialog_hermiona">
+        <form method="POST" action="/dialog_character">
             <button class="btn btn-primary" type="submit">Гермиона</button>
         </form>
-        <form method="POST" action="/dialog_ron">
+        <form method="POST" action="/dialog_character">
             <button class="btn btn-primary" type="submit">Рон</button>
         </form>
+        {% endblock content %}
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
