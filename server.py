@@ -11,8 +11,8 @@ def index():
 def login():
     return render_template('login.html', email=request.form.get('email'), password=request.form.get('pass'))
 
-@my_flask_app.route("/dialog_character", methods=['POST'])
-def dialog_character():
+@my_flask_app.route("/dialog/<int:dialog_id>", methods=['POST'])
+def dialog(dialog_id):
     dialog = {
         'text': "olololo ggg",
         'jumps': [
