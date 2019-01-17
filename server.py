@@ -1,6 +1,9 @@
 from flask import (
     Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
+import json
+
+
 my_flask_app = Flask(__name__)
 
 @my_flask_app.route("/")
@@ -13,19 +16,9 @@ def login():
 
 @my_flask_app.route("/dialog/<int:dialog_id>", methods=['POST'])
 def dialog(dialog_id):
-    dialog = {
-        'text': "olololo ggg",
-        'jumps': [
-            {
-                'dialog_id': 50,
-                'text': "Нажми сюда, чтобы ололо"
-            },
-            {
-                'dialog_id': 49,
-                'text': "Нажми сюда, чтобы гггг"
-            }
-        ]
-    }
+    with open("dialogs.json", "r", encoding="utf-8") as dialogs_file:
+        dialogs = json.load(dialogs_file)
+    dialog = [ dialog for dialog in dialogs if dialog['id'] == dialog_id ][0]
 
     # return redirect(url_for("dialog1"))
     return render_template('dialog.jinja2', dialog=dialog)
