@@ -60,15 +60,15 @@
     <div class="container">
         {% block content %}
         <h1>Добро пожаловать в квест!</h1>
-        <h2>Выбери персонажа</h2>
+        <h2>Выбери тип игры</h2>
         <form method="POST" action="/dialog/1">
-            <button class="btn btn-primary" type="submit">Гарри</button>
+            <button class="btn btn-primary" type="submit">Один игрок</button>
         </form>
         <form method="POST" action="/dialog/1">
-            <button class="btn btn-primary" type="submit">Гермиона</button>
+            <button class="btn btn-primary" type="submit">Два игрока</button>
         </form>
         <form method="POST" action="/dialog/1">
-            <button class="btn btn-primary" type="submit">Рон</button>
+            <button class="btn btn-primary" type="submit">Три игрока</button>
         </form>
         {% endblock content %}
     </div>
