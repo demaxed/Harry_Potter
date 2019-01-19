@@ -16,7 +16,7 @@ def create_app():
 
     @app.route("/dialog/<int:dialog_id>", methods=['POST'])
     def dialog(dialog_id):
-        with open("dialogs.json", "r", encoding="utf-8") as dialogs_file:
+        with open("webapp/dialogs.json", "r", encoding="utf-8") as dialogs_file:
             dialogs = json.load(dialogs_file)
         dialog = [ dialog for dialog in dialogs if dialog['id'] == dialog_id ][0]
 
