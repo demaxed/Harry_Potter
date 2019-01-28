@@ -17,10 +17,20 @@ def create_app():
     @app.route("/dialog/<int:dialog_id>", methods=['POST'])
     def dialog(dialog_id):
         with open("webapp/dialogs.json", "r", encoding="utf-8") as dialogs_file:
-            dialogs = json.load(dialogs_file)
+            dialogs = json.load(dialogs_file)["dialogs"] # added "["dialogs"]" for vscode plugin json tree view
         dialog = [ dialog for dialog in dialogs if dialog['id'] == dialog_id ][0]
 
         # return redirect(url_for("dialog1"))
         return render_template('dialog.jinja2', dialog=dialog)
+
+    @app.route("/dialog_multiplayer/<int:dialog_id>", methods=['POST'])
+    def dialog_multiplayer(dialog_id):
+        current_character = 2
+        with open("webapp/dialogs_multiplayer.json", "r", encoding="utf-8") as dialogs_file:
+            dialogs = json.load(dialogs_file)["dialogs"] # added "["dialogs"]" for vscode plugin json tree view
+        dialog = [ dialog for dialog in dialogs if dialog['id'] == dialog_id ][0]
+
+        # return redirect(url_for("dialog1"))
+        return render_template('dialog_multiplayer.jinja2', dialog=dialog, current_character=current_character)
 
     return app

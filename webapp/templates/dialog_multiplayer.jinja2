@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block content %} 
+<div>{{ dialog['text'] }}</div>
+{% if current_character == dialog['character'] %}
+{% for jump in dialog['jumps'] %}
+<form method="POST" action="/dialog_multiplayer/{{ jump['dialog_id'] }}">
+    <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
+</form>
+{% endfor %}
+{% else %}
+    <button class="btn btn-primary" type="submit">Подождите…</button>
+{% endif %}
+{% endblock content %}
+
+
+{# {% extends "index.html" %}
+{% block content %}
+<div>{{ dialog['text'] }}</div>
+{% for jump in dialog['jumps'] %}
+<form method="POST" action="/dialog/{{ jump['dialog_id'] }}">
+    <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
+</form>
+{% endfor %}
+{% endblock content %} #}
