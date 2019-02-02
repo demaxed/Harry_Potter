@@ -1,3 +1,7 @@
+pip install -r requiremets.txt
+
+activate envirement
+
 To run server use runs scripts
 
 Start commands:
