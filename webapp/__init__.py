@@ -28,12 +28,9 @@ def create_app():
 
     @app.route("/dialog/<int:dialog_id>", methods=['POST'])
     def dialog(dialog_id):
-        with open(
-            "webapp/dialogs.json", "r"
-        ) as dialogs_file:
-            dialogs = json.load(dialogs_file)
-        dialog = [
-            dialog for dialog in dialogs if dialog['id'] == dialog_id][0]
+        with open("webapp/dialogs.json", "r", encoding="utf-8") as dialogs_file:
+            dialogs = json.load(dialogs_file)["dialogs"]
+        dialog = [dialog for dialog in dialogs if dialog['id'] == dialog_id][0]
         return render_template('dialog.jinja2', dialog=dialog)
 
     @app.route("/dialog_multiplayer", methods=['GET'])
