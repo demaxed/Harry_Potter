@@ -1,24 +1,37 @@
 {% extends "index.html" %}
 {% block content %} 
-<div>{{ dialog['text'] }}</div>
-{% if current_character == dialog['character'] %}
-{% for jump in dialog['jumps'] %}
-<form method="POST" action="/dialog_multiplayer/{{ jump['dialog_id'] }}">
-    <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
-</form>
-{% endfor %}
-{% else %}
-    <button class="btn btn-primary" type="submit">Подождите…</button>
-{% endif %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            namespace = '/test';
+
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            var emit = socket.emit,
+            onevent = socket.onevent;
+
+            socket.emit = function () {
+                console.log('***', 'emit', Array.prototype.slice.call(arguments));
+                emit.apply(socket, arguments);
+            };
+            socket.onevent = function (packet) {
+                console.log('***', 'on', Array.prototype.slice.call(packet.data || []));
+                onevent.apply(socket, arguments);
+            };
+
+            socket.on('connect', function() {
+                socket.emit('start_dialog', null);
+            });
+
+            socket.on('dialog', function() {
+                socket.emit('selected', { jump: 2, character: 1 });
+            });
+
+            socket.on('selected', function() {
+                socket.emit('continue', { character: 3 });
+                socket.emit('continue', { character: 2 });
+            });
+        });
+    </script>
 {% endblock content %}
-
-
-{# {% extends "index.html" %}
-{% block content %}
-<div>{{ dialog['text'] }}</div>
-{% for jump in dialog['jumps'] %}
-<form method="POST" action="/dialog/{{ jump['dialog_id'] }}">
-    <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
-</form>
-{% endfor %}
-{% endblock content %} #}

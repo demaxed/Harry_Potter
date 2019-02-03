@@ -1,86 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Harry Potter</title>
 
-    <title>{% block title %}Quest go in time{% endblock %}</title>
-</head>
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Fixed top</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Custom styles for this template -->
+    <link href="static/css/2-col-portfolio.css" rel="stylesheet">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0" method="POST" action="/login/">
-                    <div class="form-group">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Email" name="email">
-                    </div>
-                    <div class="form-group">
-                    <input class="form-control mr-sm-2" type="password" placeholder="Пароль" name="pass">
-                    </div>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Войти</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+  </head>
+
+  <body>
+
+
+
+    <!-- Page Content -->
     <div class="container">
-        {% block content %}
-        <h1>Добро пожаловать в квест!</h1>
-        <h2>Выбери тип игры</h2>
-        <form method="POST" action="/dialog/1">
-            <button class="btn btn-primary" type="submit">Один игрок</button>
-        </form>
-        <form method="POST" action="/dialog/1">
-            <button class="btn btn-primary" type="submit">Два игрока</button>
-        </form>
-        <form method="POST" action="/dialog_multiplayer/1">
-            <button class="btn btn-primary" type="submit">Три игрока</button>
-        </form>
-        {% endblock content %}
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Page Heading
+        <small>Secondary Text</small>
+      </h1>
+
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 portfolio-item">
+          <div class="card h-100">
+            <a href="/login"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="/login">Login</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 portfolio-item">
+          <div class="card h-100">
+            <a href="/sign_in"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="/sign_in">Sign in</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="/single_game">Single game</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Multiplayer game</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
+
+      </div>
+      <!-- /.row -->
+
+
+
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-</body>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
 
 </html>
-<!-- http://127.0.0.1:5000 -->
