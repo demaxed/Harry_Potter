@@ -1,9 +1,17 @@
-{% extends "index.html" %}
+{% extends "single_game.html" %}
+
 {% block content %}
-<div>{{ dialog['text'] }}</div>
-{% for jump in dialog['jumps'] %}
-<form method="POST" action="/dialog/{{ jump['dialog_id'] }}">
-    <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
-</form>
-{% endfor %}
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">
+        <div>{{ dialog['text'] }}</div>
+    </p>
+    {% for jump in dialog['jumps'] %}
+    <form method="POST" action="/dialog/{{ jump['dialog_id'] }}">
+        <button class="btn btn-primary" type="submit">{{ jump['text'] }}</button>
+    </form>
+    {% endfor %}
+</div>
+</div>
 {% endblock content %}
