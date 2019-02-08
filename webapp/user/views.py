@@ -12,34 +12,32 @@ blueprint = Blueprint('user', __name__, url_prefix='/')
 @blueprint.route('/login')
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('news.index'))
+        return redirect(url_for('index'))
     title = "Авторизация"
     login_form = LoginForm()
     return render_template('login.html', page_title=title, form=login_form)
 
 
-@blueprint.route('/sign_in', methods=['POST'])
+@blueprint.route('/process_login', methods=['POST'])
 def process_login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.check_password(form.password.data):
             login_user(user)
-            flash('Вы вошли на сайт')
             return redirect(url_for('index'))
 
     flash('Неправильное имя пользователя или пароль')
-    return redirect(url_for('login'))
+    return redirect(url_for('user.login'))
 
 
 @blueprint.route('/logout')
 def logout():
     logout_user()
-    flash('log_out')
     return redirect(url_for('index'))
 
 
-@blueprint.route('/sign_in')
+@blueprint.route('/register')
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))

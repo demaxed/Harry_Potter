@@ -3,46 +3,46 @@
 
 <head>
   <style class="vjs-styles-defaults">
-    .vdo-js {
-      width: 300px;
-      height: 150px;
-    }
+  .vdo-js {
+    width: 300px;
+    height: 150px;
+  }
 
-    .vjs-fluid {
-      padding-top: 56.25%
-    }
-  </style>
-  <style class="vjs-styles-dimensions">
-    .vdo_ai_1481727-dimensions {
-      width: 419px;
-      height: 236px;
-    }
+  .vjs-fluid {
+    padding-top: 56.25%
+  }
+</style>
+<style class="vjs-styles-dimensions">
+.vdo_ai_1481727-dimensions {
+  width: 419px;
+  height: 236px;
+}
 
-    .vdo_ai_1481727-dimensions.vjs-fluid {
-      padding-top: 56.25%;
-    }
-  </style>
-  <title>{% block title %}Quest go in time{% endblock %}</title>
-  <!-- for-mobile-apps -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!-- //for-mobile-apps -->
-  <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-  <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all">
-  <!-- gallery -->
-  <link rel="stylesheet" href="/static/css/lightGallery.css" type="text/css" media="all">
-  <!-- //gallery -->
-  <!-- font-awesome icons -->
-  <link href="/static/css/font-awesome.css" rel="stylesheet">
+.vdo_ai_1481727-dimensions.vjs-fluid {
+  padding-top: 56.25%;
+}
+</style>
+<title>{% block title %}Quest go in time{% endblock %}</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- //for-mobile-apps -->
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all">
+<!-- gallery -->
+<link rel="stylesheet" href="/static/css/lightGallery.css" type="text/css" media="all">
+<!-- //gallery -->
+<!-- font-awesome icons -->
+<link href="/static/css/font-awesome.css" rel="stylesheet">
 
-  <!-- //font-awesome icons -->
-  <link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
-    rel="stylesheet" type="text/css">
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+rel="stylesheet" type="text/css">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&amp;amp;subset=cyrillic" rel="stylesheet">
-  <link rel="icon" type="image/icon" href="/static/img/favicon.ico" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&amp;amp;subset=cyrillic" rel="stylesheet">
+<link rel="icon" type="image/icon" href="/static/img/favicon.ico" />
 </head>
 
 <body background="">
@@ -75,8 +75,12 @@
               <li><a href="/about"><span data-hover="About">Об игре</span></a></li>
               <li><a href=""><span data-hover=""></span></a></li>
               <li><a href=""><span data-hover=""></span></a></li>
-              <li><a href="/login"><span data-hover="Login">Регистрация</span></a></li>
-              <li><a href="/sign_in"><span data-hover="Sign up">Войти</span></a></li>
+              <li><a href="{{ url_for('user.register') }}"><span data-hover="Register">Регистрация</span></a></li>
+              {% if current_user.is_authenticated %}
+              <li><a href="{{ url_for('user.logout') }}"><span data-hover="Exit">{{ current_user.username  }}</span></a></li>
+              {% else %}
+              <li><a href="{{ url_for('user.login') }}"><span data-hover="Login">Войти</span></a></li>
+              {% endif %}
             </ul>
           </nav>
         </div>
@@ -127,7 +131,7 @@
   <script src="/static/js/responsiveslides.min.js"></script>
   <script>
     // You can also use "$(window).load(function() {"
-                  $(function () {
+    $(function () {
                   // Slideshow 4
                   $("#slider3").responsiveSlides({
                     auto: true,
@@ -136,36 +140,36 @@
                     speed: 500,
                     namespace: "callbacks",
                     before: function () {
-                    $('.events').append("<li>before event fired.</li>");
+                      $('.events').append("<li>before event fired.</li>");
                     },
                     after: function () {
-                    $('.events').append("<li>after event fired.</li>");
+                      $('.events').append("<li>after event fired.</li>");
                     }
                   });
-                
-                  });
-                 </script>
-  <!-- js -->
-  <!-- start-smoth-scrolling -->
-  <script src="/static/js/lightGallery.js"></script>
-  <script>
-    $(document).ready(function() {
-        $("#lightGallery").lightGallery({
-          mode:"fade",
-          speed:800,
-          caption:true,
-          desc:true,
-          mobileSrc:true
-        });
-      });
-    </script>
 
-  <script src="/static/js/owl.carousel.js"></script>
-  <link href="/static/css/owl.theme.css" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css" media="all">
-  <script>
-    $(document).ready(function () {
-      $("#owl-demo").owlCarousel({
+                });
+              </script>
+              <!-- js -->
+              <!-- start-smoth-scrolling -->
+              <script src="/static/js/lightGallery.js"></script>
+              <script>
+                $(document).ready(function() {
+                  $("#lightGallery").lightGallery({
+                    mode:"fade",
+                    speed:800,
+                    caption:true,
+                    desc:true,
+                    mobileSrc:true
+                  });
+                });
+              </script>
+
+              <script src="/static/js/owl.carousel.js"></script>
+              <link href="/static/css/owl.theme.css" rel="stylesheet">
+              <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css" media="all">
+              <script>
+                $(document).ready(function () {
+                  $("#owl-demo").owlCarousel({
 
         autoPlay: 3000, //Set AutoPlay to 3 seconds
         autoPlay: true,
@@ -177,28 +181,28 @@
 
       });
 
-    });
-  </script>
-  <!-- start-smoth-scrolling -->
-  <script type="text/javascript" src="/static/js/move-top.js"></script>
-  <script type="text/javascript" src="/static/js/easing.js"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function ($) {
-      $(".scroll").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-          scrollTop: $(this.hash).offset().top
-        }, 1000);
-      });
-    });
-  </script>
-  <!-- start-smoth-scrolling -->
-  <!-- //js -->
-  <script src="/static/js/bootstrap.js"></script>
-  <!-- //for bootstrap working -->
-  <!-- here stars scrolling icon -->
-  <script type="text/javascript">
-    $(document).ready(function () {
+                });
+              </script>
+              <!-- start-smoth-scrolling -->
+              <script type="text/javascript" src="/static/js/move-top.js"></script>
+              <script type="text/javascript" src="/static/js/easing.js"></script>
+              <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                  $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                      scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                  });
+                });
+              </script>
+              <!-- start-smoth-scrolling -->
+              <!-- //js -->
+              <script src="/static/js/bootstrap.js"></script>
+              <!-- //for bootstrap working -->
+              <!-- here stars scrolling icon -->
+              <script type="text/javascript">
+                $(document).ready(function () {
       /*
         var defaults = {
         containerID: 'toTop', // fading element id
@@ -206,19 +210,19 @@
         scrollSpeed: 1200,
         easingType: 'linear' 
         };
-      */
+        */
 
-      $().UItoTop({
-        easingType: 'easeOutQuart'
+        $().UItoTop({
+          easingType: 'easeOutQuart'
+        });
+
       });
+    </script>
 
-    });
-  </script>
-
-  <!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap core JavaScript -->
   <!-- <script src="/static/vendor/jquery/jquery.min.js"></script>
     <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-</body>
+  </body>
 
-</html>
+  </html>
