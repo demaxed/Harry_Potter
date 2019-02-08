@@ -1,105 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
+  <style class="vjs-styles-defaults">
+    .vdo-js {
+      width: 300px;
+      height: 150px;
+    }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    .vjs-fluid {
+      padding-top: 56.25%
+    }
+  </style>
+  <style class="vjs-styles-dimensions">
+    .vdo_ai_1481727-dimensions {
+      width: 419px;
+      height: 236px;
+    }
 
-    <title>Harry Potter</title>
+    .vdo_ai_1481727-dimensions.vjs-fluid {
+      padding-top: 56.25%;
+    }
+  </style>
+  <title>{% block title %}Quest go in time{% endblock %}</title>
+  <!-- for-mobile-apps -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- //for-mobile-apps -->
+  <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all">
+  <!-- gallery -->
+  <link rel="stylesheet" href="/static/css/lightGallery.css" type="text/css" media="all">
+  <!-- //gallery -->
+  <!-- font-awesome icons -->
+  <link href="/static/css/font-awesome.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- //font-awesome icons -->
+  <link href="//fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Jura:300,400,500,600" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+    rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="static/css/2-col-portfolio.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&amp;amp;subset=cyrillic" rel="stylesheet">
+  <link rel="icon" type="image/icon" href="/static/img/favicon.ico" />
+</head>
 
-  </head>
-
-  <body>
-
+<body background="">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
-    <!-- Page Content -->
+  <!-- header -->
+
+  <div class="w3_navigation">
     <div class="container">
-
-      <!-- Page Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
-      </h1>
-
-      <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="/login"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="/login">Login</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
+      <nav class="navbar navbar-default">
+        <div class="navbar-header navbar-left">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="w3_navigation_pos">
+            <h1><a href="/"><span>Quest</span> Go in time</a></h1>
           </div>
         </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="/sign_in"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="/sign_in">Sign in</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
-            </div>
-          </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+          <nav class="cl-effect-5" id="cl-effect-5">
+            <ul class="nav navbar-nav">
+              <li><a href=""><span data-hover="About"></span></a></li>
+              <li class="active"><a href="/"><span data-hover="Home">Home</span></a></li>
+
+              <li><a href="/about"><span data-hover="About">Об игре</span></a></li>
+              <li><a href=""><span data-hover=""></span></a></li>
+              <li><a href=""><span data-hover=""></span></a></li>
+              <li><a href="/login"><span data-hover="Login">Регистрация</span></a></li>
+              <li><a href="/sign_in"><span data-hover="Sign up">Войти</span></a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="/single_game">Single game</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Multiplayer game</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates quae, necessitatibus unde temporibus.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2"></div>
-
-      </div>
-      <!-- /.row -->
-
-
-
+      </nav>
     </div>
-    <!-- /.container -->
+  </div>
+  <!-- //header -->
+  <!-- banner -->
+  <div class="banner">
+    <!--Slider-->
+    <div class="slider">
+      <div class="callbacks_container">
+        <ul class="rslides callbacks callbacks1" id="slider3">
+          <li id="callbacks1_s2" class="callbacks1_on" style="display: block; float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 500ms ease-in-out 0s;">
+            <div class="slider-img">
+              <img src="/static/img/banner1.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="slider-info">
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+              <h4>Спаси узника Азкабана и любимчика Хагрида</h4>
+              <p>Реши викторину, узнай много нового</p>
+              <a href="/single_game" class="hvr-shutter-in-horizontal scroll">Один игрок</a>
+            </div>
+          </li>
+          <li id="callbacks1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out 0s;">
+            <div class="slider-img">
+              <img src="/static/img/banner2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="slider-info">
+
+              <h4>Играй командой, спасай друзей</h4>
+              <p>Раздел находится в разработке</p>
+              <a href="#" class="hvr-shutter-in-horizontal scroll">Три игрока</a>
+            </div>
+          </li>
+
+        </ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a>
+
       </div>
-      <!-- /.container -->
-    </footer>
+      <div class="clearfix"></div>
+    </div>
+    <!--//Slider-->
+  </div>
+  <!-- //banner -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--banner Slider starts Here-->
+  <script src="/static/js/jquery-2.2.3.min.js"></script>
+  <script src="/static/js/responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+                  $(function () {
+                  // Slideshow 4
+                  $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager:false,
+                    nav:true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                    }
+                  });
+                
+                  });
+                 </script>
+  <!-- js -->
+  <!-- start-smoth-scrolling -->
+  <script src="/static/js/lightGallery.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("#lightGallery").lightGallery({
+          mode:"fade",
+          speed:800,
+          caption:true,
+          desc:true,
+          mobileSrc:true
+        });
+      });
+    </script>
 
-  </body>
+  <script src="/static/js/owl.carousel.js"></script>
+  <link href="/static/css/owl.theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css" media="all">
+  <script>
+    $(document).ready(function () {
+      $("#owl-demo").owlCarousel({
+
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        autoPlay: true,
+        navigation: true,
+
+        items: 4,
+        itemsDesktop: [640, 5],
+        itemsDesktopSmall: [414, 4]
+
+      });
+
+    });
+  </script>
+  <!-- start-smoth-scrolling -->
+  <script type="text/javascript" src="/static/js/move-top.js"></script>
+  <script type="text/javascript" src="/static/js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $(".scroll").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+  <!-- start-smoth-scrolling -->
+  <!-- //js -->
+  <script src="/static/js/bootstrap.js"></script>
+  <!-- //for bootstrap working -->
+  <!-- here stars scrolling icon -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+        };
+      */
+
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+
+    });
+  </script>
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+</body>
 
 </html>
